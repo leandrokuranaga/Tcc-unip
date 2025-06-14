@@ -1,56 +1,62 @@
-# **BACKEND DA APLICAÇÃO**
+# **APPLICATION BACKEND**
 
 ***
 
-## **Para acessar o BACKEND da aplicação é necessário realizar algumas coisas**
+## **To run the BACKEND of the application, a few steps are required**
 
-* [Instalar o Postgresql.](https://www.postgresql.org/download/)
-* No arquivo Knexfile.js é necessário colocar o **usuário, senha e tabela(Necessário criar tabela também) do postgresql.**
-* [Editar o arquivo common.js colocando seu IP na aplicação React-Native na pasta App](https://bitbucket.org/xrundevelopment/tcc/src/master/). 
-* Utilizar o comando ***npm install*** no CMD para instalar as dependências.
-* Utilizar o comando ***Knex migrate:latest*** no CMD para ajustar o middleware.
-* Utilizar o comando ***npm start*** para rodar o BACKEND.
+* [Install PostgreSQL](https://www.postgresql.org/download/)
+* In the `Knexfile.js` file, set your **PostgreSQL username, password, and database name (you must create the database as well).**
+* Edit the `common.js` file by adding your local IP to the React Native app inside the App folder
+* Run ***npm install*** in the command line to install all dependencies
+* Run ***Knex migrate:latest*** in the command line to apply migrations
+* Run ***npm start*** to start the BACKEND
+
 ***
-## **Caso ocorra erro com seu nodemon é recomendado utilizar os seguintes comandos**
+
+## **If you experience issues with Nodemon, try the following commands**
 
 * ***npm install -g nodemon***
 * ***npm install --save-dev nodemon***
 * ***npm config get prefix***
-* ___set PATH=%PATH%;C:\Users\"Aqui seu usuario"\AppData\Roaming\npm;___
-  
-***
-## **Na parte de banco de dados temos os seguintes comandos úteis**
-Para acessar o postgresql via CMD
+* ___set PATH=%PATH%;C:\Users\"YourUserName"\AppData\Roaming\npm;___
 
+***
+
+## **Useful PostgreSQL Commands**
+To access PostgreSQL via CMD:
 
 * ___psql -U postgres___
- 
- Para acessar a tabela
 
+To access your database:
 
-* ___\c "Nome da tabela"___
+* ___\c "YourDatabaseName"___
 
+To check user records:
 
-Para verificar os registros dos usuários
+* ___select * from users;___
 
-
-*  ___select * from users;___
-  
 ***
-## **Para descobrir seu IP**
 
- Abra o CMD e utilize o comando ***ipconfig***
+## **How to find your IP address**
 
+Open CMD and run the command ***ipconfig***
 
-Na parte de ***Rede Ethernet*** ou ***Adaptador de Rede Sem Fio*** seu **IP** estará em ___IPV4: 192.168.**___
+Your **IP address** will be shown under the ***Ethernet Adapter*** or ***Wireless LAN Adapter*** section as:  
+___IPv4 Address: 192.168.xx.xx___
+
 ***
-## ***Caso o comando psql não funcione***
 
-Precisará adicionar a variável de ambiente
+## **If the psql command doesn't work**
 
-1. Pressione a tecla Windows+E vá até ao lado esquerdo e clique com o botão direito em Este Computador.
-2. Clique em Configurações Avançadas do Sistema no lado esquerdo.
-3. Clique em Variáveis de Ambiente.
-4. Vá até Path e edite.
-5. Adicione ao path como de exemplo:***"C:\Program Files\PostgreSQL\9.0\bin"***
-6. Reinicie o Windows, caso não reconheça o comando ***(Se estiver com o cmd antigo antes do tutorial ele não irá funcionar é necessário abrir um novo cmd após tutorial)***.
+You may need to set up your environment variables:
+
+1. Press **Windows+E**, right-click on "This PC" or "My Computer"
+2. Click on **Advanced system settings** on the left panel
+3. Click **Environment Variables**
+4. Find the **Path** variable and click **Edit**
+5. Add a new entry, for example:  
+   ***"C:\Program Files\PostgreSQL\9.0\bin"***
+6. Restart Windows if the command still isn't recognized  
+   _(Note: if you had CMD open before completing the steps, close it and open a new one)_
+
+***
